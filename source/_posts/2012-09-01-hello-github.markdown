@@ -4,12 +4,14 @@ title: "Hello Github"
 date: 2012-09-01 15:11
 comments: true
 categories: test
+published: false
 ---
 
 ### Intro
 
 This is my first git hub blog,I think it will be fun to use all command line tools to write blogs, because it's fast, simple and elegant. 
 
+go home
 
 {% codeblock lang:java %}
 public static void main(String args[][]){
