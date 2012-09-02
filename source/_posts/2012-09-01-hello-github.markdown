@@ -11,7 +11,7 @@ published: false
 
 This is my first git hub blog,I think it will be fun to use all command line tools to write blogs, because it's fast, simple and elegant. 
 
-go home
+go home kjlksjdlkjlskdj 
 
 {% codeblock lang:java %}
 public static void main(String args[][]){
