@@ -11,7 +11,10 @@ published: false
 
 This is my first git hub blog,I think it will be fun to use all command line tools to write blogs, because it's fast, simple and elegant. 
 
-go home kjlksjdlkjlskdj 
+go home  hahahahhahahahhahahahahah
+    set nocompatible   " Disable vi-compatibility
+    set laststatus=2   " Always show the statusline
+    set encoding=utf-8 " Necessary to show unicode glyphs
 
 {% codeblock lang:java %}
 public static void main(String args[][]){
