@@ -28,5 +28,7 @@ System.out.println("hello Github!!");
 
 <!--more-->
 
+
+hahahahahahahahhahahahahahahhaahh
 测试一下中文简体的显示效果.
 感觉显示效果还是不错的,以后写博客就变成一件有乐趣的事情了.这里不仅有技术,还有生活...
