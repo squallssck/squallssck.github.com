@@ -4,7 +4,7 @@
   <title><![CDATA[KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-24T17:31:53-05:00</updated>
+  <updated>2013-02-24T17:34:50-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -12,14 +12,5 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[test new post 2013]]></title>
-    <link href="http://squallssck.github.com/blog/2013/02/24/test-new-post-2013/"/>
-    <updated>2013-02-24T17:09:00-05:00</updated>
-    <id>http://squallssck.github.com/blog/2013/02/24/test-new-post-2013</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
   
 </feed>
