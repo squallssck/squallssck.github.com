@@ -1,12 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://squallssck.github.com/blog/2013/02/24/test-new-post-2013/</loc>
+        <lastmod>2013-02-24T17:14:12-05:00</lastmod>
+    </url>
+    <url>
         <loc>http://squallssck.github.com/blog/archives/</loc>
-        <lastmod>2013-02-24T16:52:09-05:00</lastmod>
+        <lastmod>2013-02-24T17:14:12-05:00</lastmod>
     </url>
     <url>
         <loc>http://squallssck.github.com/</loc>
-        <lastmod>2013-02-24T16:52:09-05:00</lastmod>
+        <lastmod>2013-02-24T17:14:12-05:00</lastmod>
     </url>
     <url>
         <loc>http://squallssck.github.com/robots.txt</loc>
