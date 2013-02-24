@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: TEST | KC's Core Java World]]></title>
+  <link href="http://squallssck.github.com/blog/categories/test/atom.xml" rel="self"/>
+  <link href="http://squallssck.github.com/"/>
+  <updated>2013-02-24T17:42:54-05:00</updated>
+  <id>http://squallssck.github.com/</id>
+  <author>
+    <name><![CDATA[squallssck]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello Java World :)]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/24/hello-java-world/"/>
+    <updated>2013-02-24T17:36:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/24/hello-java-world</id>
+    <content type="html"><![CDATA[<p>``` java HelloWorld</p>
+
+<p>public class HelloWorld {</p>
+
+<pre><code>public static void main (String [] args){
+
+    System.out.println("Hello Java World!");
+</code></pre>
+
+<p>}
+}
+```</p>
+]]></content>
+  </entry>
+  
+</feed>
