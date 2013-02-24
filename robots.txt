@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://squallssck.github.com/sitemap.xml 
