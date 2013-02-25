@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JAVA | KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-25T00:15:54-05:00</updated>
+  <updated>2013-02-25T00:23:58-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to use libsvm to do classification with java]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/25/about-using-java-version-libsvm-do-classcification/"/>
+    <updated>2013-02-25T00:19:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/25/about-using-java-version-libsvm-do-classcification</id>
+    <content type="html"><![CDATA[<p><strong>A real example from data preparing to train the model to finally do the classification included</strong></p>
+
+<p>Comming soon...</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[About pdfs with only owner's password deciphere by using pdfbox]]></title>
