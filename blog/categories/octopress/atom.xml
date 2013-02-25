@@ -4,7 +4,7 @@
   <title><![CDATA[Category: OCTOPRESS | KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-24T19:17:45-05:00</updated>
+  <updated>2013-02-24T22:30:02-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -18,22 +18,24 @@
     <link href="http://squallssck.github.com/blog/2013/02/24/some-octopress-tips/"/>
     <updated>2013-02-24T19:12:00-05:00</updated>
     <id>http://squallssck.github.com/blog/2013/02/24/some-octopress-tips</id>
-    <content type="html"><![CDATA[<ol>
-<li>About how to add local images on blog</li>
-</ol>
+    <content type="html"><![CDATA[<p><em>1. Add Local Image</em></p>
 
+<p>About how to add local images on blog
+copy your image in Octopress/source/images.
+PS: Octopress(whatever you named it) directory is a repository directory for your blog.
+then you can use img tag as</p>
 
-<p>copy your image in Octopress/source/images.</p>
-
-<p>PS: Octopress(whatever you named it) directory is a repository directory for your blog.</p>
-
-<p>then you can use img tag as</p>
-
-<p><img class="left" src="/images/terminal.png" width="350" height="350" title="image" alt="images"></p>
+<p>{ % img /images/terminal.png 350 350 'image' 'images' % }</p>
 
 <p>like</p>
 
 <p><img class="left" src="/images/php.jpg" width="350" height="350" title="image" alt="images"></p>
+
+<p><em>2. Read More</em></p>
+
+<p>&lt; ! - - more - - ></p>
+
+<p>*3. *</p>
 ]]></content>
   </entry>
   
