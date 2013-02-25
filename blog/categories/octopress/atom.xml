@@ -4,7 +4,7 @@
   <title><![CDATA[Category: OCTOPRESS | KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-24T22:32:33-05:00</updated>
+  <updated>2013-02-24T22:32:58-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -37,8 +37,9 @@ then you can use img tag as</p>
 
 <p><em>3. Highlight Text</em></p>
 
-<p>** xxxxxxxxx **
-* xxxxxxxx *</p>
+<p>** xxxxxxxxx **</p>
+
+<p>* xxxxxxxx *</p>
 ]]></content>
   </entry>
   
