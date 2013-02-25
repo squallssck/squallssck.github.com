@@ -4,7 +4,7 @@
   <title><![CDATA[KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-24T23:21:58-05:00</updated>
+  <updated>2013-02-24T23:23:44-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -50,6 +50,9 @@ then you can use img tag as</p>
 <p>like</p>
 
 <p><img src="http://squallssck.github.com/images/php.jpg" width="350" height="350" title="image" alt="images"></p>
+
+<!--more-->
+
 
 <p><em>2. Read More</em></p>
 
