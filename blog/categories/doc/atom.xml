@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: DOC | KC's Core Java World]]></title>
+  <link href="http://squallssck.github.com/blog/categories/doc/atom.xml" rel="self"/>
+  <link href="http://squallssck.github.com/"/>
+  <updated>2013-02-25T12:09:55-05:00</updated>
+  <id>http://squallssck.github.com/</id>
+  <author>
+    <name><![CDATA[squallssck]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[About how to convert docx/doc/rtf into html using JAVA]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/25/about-how-to-convert-docx-slash-doc-slash-rtf-into-html-using-java/"/>
+    <updated>2013-02-25T12:06:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/25/about-how-to-convert-docx-slash-doc-slash-rtf-into-html-using-java</id>
+    <content type="html"><![CDATA[<p>comming soon...</p>
+
+<p><strong>1. DOCX</strong></p>
+
+<blockquote></blockquote>
+
+<p><strong>2. DOC</strong></p>
+
+<blockquote></blockquote>
+
+<p><strong>3. RTF</strong></p>
+
+<blockquote></blockquote>
+]]></content>
+  </entry>
+  
+</feed>
