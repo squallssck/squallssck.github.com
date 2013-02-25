@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: OCTOPRESS | KC's Core Java World]]></title>
+  <link href="http://squallssck.github.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://squallssck.github.com/"/>
+  <updated>2013-02-24T19:14:59-05:00</updated>
+  <id>http://squallssck.github.com/</id>
+  <author>
+    <name><![CDATA[squallssck]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Some octopress tips]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/24/some-octopress-tips/"/>
+    <updated>2013-02-24T19:12:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/24/some-octopress-tips</id>
+    <content type="html"><![CDATA[<ol>
+<li>About how to add local images on blog</li>
+</ol>
+
+
+<p>copy your image in Octopress/source/images.</p>
+
+<p>PS: Octopress(whatever you named it) directory is a repository directory for your blog.</p>
+
+<p>then you can use img tag as</p>
+
+<p><code>
+<img class="left" src="/images/terminal.png" width="350" height="350" title="image" alt="images">
+</code></p>
+
+<p>like</p>
+
+<p><img class="left" src="/images/php.jpg" width="350" height="350" title="image" alt="images"></p>
+]]></content>
+  </entry>
+  
+</feed>
