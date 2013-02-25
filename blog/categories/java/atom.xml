@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: JAVA | KC's Core Java World]]></title>
+  <link href="http://squallssck.github.com/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://squallssck.github.com/"/>
+  <updated>2013-02-24T19:07:59-05:00</updated>
+  <id>http://squallssck.github.com/</id>
+  <author>
+    <name><![CDATA[squallssck]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[About pdfs with only owner's password deciphere by using pdfbox]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/24/about-pdfs-with-only-owners-password-deciphere-by-using-pdfbox/"/>
+    <updated>2013-02-24T18:59:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/24/about-pdfs-with-only-owners-password-deciphere-by-using-pdfbox</id>
+    <content type="html"><![CDATA[<p>Some pdfs have owner password to prevent user from copying, extracting or printing ... etc ...</p>
+
+<p>By using pdf box, you can easily deciphere this kind of open and read only pdfs.</p>
+
+<p>```java</p>
+
+<pre><code>    PDDocument document = PDDocument.load(filePath, true);
+
+    if (document.isEncrypted()) {
+        try {
+            document.decrypt("");
+            document.setAllSecurityToBeRemoved(true);
+        } catch (Exception e) {
+            throw new UnableToDeciphereException("The document is encrypted, and we can't decrypt it.", e);
+        }
+    }
+
+    ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+
+    document.save(outStream);
+
+    document.close();
+
+    byte[] decipheredBytes = outStream.toByteArray();
+</code></pre>
+
+<p>```</p>
+
+<p>or you can use a FileOutputStream to save it into a file. Actually, document.save() has a parameter filepath, so you can , for example : document.save("/Users/User/Desktop/abc.pdf") .</p>
+]]></content>
+  </entry>
+  
+</feed>

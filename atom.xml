@@ -4,7 +4,7 @@
   <title><![CDATA[KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-24T18:56:10-05:00</updated>
+  <updated>2013-02-24T19:07:59-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[About pdfs with only owner's password deciphere by using pdfbox]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/24/about-pdfs-with-only-owners-password-deciphere-by-using-pdfbox/"/>
+    <updated>2013-02-24T18:59:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/24/about-pdfs-with-only-owners-password-deciphere-by-using-pdfbox</id>
+    <content type="html"><![CDATA[<p>Some pdfs have owner password to prevent user from copying, extracting or printing &#8230; etc &#8230;</p>
+
+<p>By using pdf box, you can easily deciphere this kind of open and read only pdfs.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>     <span class="n">PDDocument</span> <span class="n">document</span> <span class="o">=</span> <span class="n">PDDocument</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="n">filePath</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">if</span> <span class="o">(</span><span class="n">document</span><span class="o">.</span><span class="na">isEncrypted</span><span class="o">())</span> <span class="o">{</span>
+</span><span class='line'>          <span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>              <span class="n">document</span><span class="o">.</span><span class="na">decrypt</span><span class="o">(</span><span class="s">&quot;&quot;</span><span class="o">);</span>
+</span><span class='line'>              <span class="n">document</span><span class="o">.</span><span class="na">setAllSecurityToBeRemoved</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+</span><span class='line'>          <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>              <span class="k">throw</span> <span class="k">new</span> <span class="nf">UnableToDeciphereException</span><span class="o">(</span><span class="s">&quot;The document is encrypted, and we can&#39;t decrypt it.&quot;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+</span><span class='line'>          <span class="o">}</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">ByteArrayOutputStream</span> <span class="n">outStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayOutputStream</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">document</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">outStream</span><span class="o">);</span>
+</span><span class='line'>      
+</span><span class='line'>      <span class="n">document</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="kt">byte</span><span class="o">[]</span> <span class="n">decipheredBytes</span> <span class="o">=</span> <span class="n">outStream</span><span class="o">.</span><span class="na">toByteArray</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or you can use a FileOutputStream to save it into a file. Actually, document.save() has a parameter filepath, so you can , for example : document.save(&#8220;/Users/User/Desktop/abc.pdf&#8221;) .</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hello Java World :)]]></title>
