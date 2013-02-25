@@ -4,7 +4,7 @@
   <title><![CDATA[KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-24T22:30:38-05:00</updated>
+  <updated>2013-02-24T22:32:22-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -35,7 +35,10 @@ then you can use img tag as</p>
 
 <p>&lt; ! - - more - - ></p>
 
-<p>*3. *</p>
+<p><em>3. Highlight Text</em></p>
+
+<p>** xxxxxxxxx **
+* xxxxxxxx *</p>
 ]]></content>
   </entry>
   
