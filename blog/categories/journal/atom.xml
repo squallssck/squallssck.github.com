@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: JOURNAL | KC's Core Java World]]></title>
+  <link href="http://squallssck.github.com/blog/categories/journal/atom.xml" rel="self"/>
+  <link href="http://squallssck.github.com/"/>
+  <updated>2013-02-26T00:31:26-05:00</updated>
+  <id>http://squallssck.github.com/</id>
+  <author>
+    <name><![CDATA[squallssck]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[journal]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/26/journal/"/>
+    <updated>2013-02-26T00:14:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/26/journal</id>
+    <content type="html"><![CDATA[<p>今天做了一些关于Docx转换Html的研究, 发现Java现在并无什么很完美的解决方案, 主要是转换效果不佳, 公司想要的Header里的图片没有任何一个Java的开源解决方案可以完美的转换的. 一天搞来搞去, 没有任何成果. 这半年时间做开发的工作, 感觉自己并非非常关心具体的细节实现, 而是对数据传输和系统架构比较有兴趣. 未来怎么走, 变数还很大.</p>
+
+<p>三月的目标:</p>
+
+<ol>
+<li>签证问题搞清楚, 争取准时寄出.</li>
+<li>选择一门脚本语言或者更加高层的语言学习熟悉.</li>
+<li>把pdftojson完善, 提高并发性能.</li>
+<li>完善rtf,docx,doc to html, 提高并发性能.</li>
+<li>最好把MQ实现出来.</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
