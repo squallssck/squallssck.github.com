@@ -4,7 +4,7 @@
   <title><![CDATA[Category: DOC | KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/blog/categories/doc/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-26T00:31:26-05:00</updated>
+  <updated>2013-02-26T00:45:03-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -31,6 +31,38 @@
 <p><strong>3. RTF</strong></p>
 
 <blockquote></blockquote>
+
+<!--more-->
+
+
+<p>Actually, there is one solution, "One sulution to rule them all" . That is to use OpenOffice as the background service to convert them all. You can implement this remote call by yourself, but someone already wrote a java library to provide a high level API for us to use called JODConverter.</p>
+
+<p>http://code.google.com/p/jodconverter/</p>
+
+<p>```java</p>
+
+<pre><code>    OfficeManager officeManager = new DefaultOfficeManagerConfiguration()
+        //4 ports indicate 4 working processes to do the conversion.
+        .setPortNumbers(8100, 8101, 8102, 8103)
+        .buildOfficeManager();
+
+    officeManager.start();
+
+    OfficeDocumentConverter converter = new OfficeDocumentConverter(
+            officeManager);
+
+    converter.convert(new File(filepath1), new File(filepath2));
+
+    officeManager.stop();
+</code></pre>
+
+<p>```</p>
+
+<p>It's actually not difficult to use it, the hard part is to install it. On Mac, install OpenOffice is very easy by install a dmg file. But on linux server, it taks a little time to figure it out.</p>
+
+<p>The solution is as below:</p>
+
+<p>comming soon ...</p>
 ]]></content>
   </entry>
   

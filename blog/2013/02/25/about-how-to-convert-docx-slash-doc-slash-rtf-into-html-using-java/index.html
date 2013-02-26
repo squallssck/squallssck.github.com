@@ -9,7 +9,7 @@
   <meta name="author" content="squallssck">
 
   
-  <meta name="description" content="comming soon&#8230; 1. DOCX 2. DOC 3. RTF ">
+  <meta name="description" content="comming soon&#8230; 1. DOCX 2. DOC 3. RTF Actually, there is one solution, &#8220;One sulution to rule them all&#8221; . That is to use OpenOffice as &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,6 +106,48 @@
 <p><strong>3. RTF</strong></p>
 
 <blockquote></blockquote>
+
+<!--more-->
+
+
+<p>Actually, there is one solution, &#8220;One sulution to rule them all&#8221; . That is to use OpenOffice as the background service to convert them all. You can implement this remote call by yourself, but someone already wrote a java library to provide a high level API for us to use called JODConverter.</p>
+
+<p>http://code.google.com/p/jodconverter/</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>     <span class="n">OfficeManager</span> <span class="n">officeManager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultOfficeManagerConfiguration</span><span class="o">()</span>
+</span><span class='line'>          <span class="c1">//4 ports indicate 4 working processes to do the conversion.</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">setPortNumbers</span><span class="o">(</span><span class="mi">8100</span><span class="o">,</span> <span class="mi">8101</span><span class="o">,</span> <span class="mi">8102</span><span class="o">,</span> <span class="mi">8103</span><span class="o">)</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">buildOfficeManager</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">officeManager</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">OfficeDocumentConverter</span> <span class="n">converter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OfficeDocumentConverter</span><span class="o">(</span>
+</span><span class='line'>              <span class="n">officeManager</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">converter</span><span class="o">.</span><span class="na">convert</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">filepath1</span><span class="o">),</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">filepath2</span><span class="o">));</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">officeManager</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It&#8217;s actually not difficult to use it, the hard part is to install it. On Mac, install OpenOffice is very easy by install a dmg file. But on linux server, it taks a little time to figure it out.</p>
+
+<p>The solution is as below:</p>
+
+<p>comming soon &#8230;</p>
 </div>
 
 
