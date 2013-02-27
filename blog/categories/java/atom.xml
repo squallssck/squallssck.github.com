@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JAVA | KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-26T00:45:03-05:00</updated>
+  <updated>2013-02-27T00:23:17-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -12,6 +12,141 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[About how to get mime types using Java]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/26/about-how-to-get-mime-types-using-java/"/>
+    <updated>2013-02-26T13:14:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/26/about-how-to-get-mime-types-using-java</id>
+    <content type="html"><![CDATA[<p><em>1. using javax.activation.MimetypesFileTypeMap</em></p>
+
+<p><code>java
+ File f = new File("test.docx");
+ String mimeType = new MimetypesFileTypeMap().getContentType(f);
+</code></p>
+
+<p>result:
+Mime Type of .DS_Store is application/octet-stream
+Mime Type of 444.docx is application/octet-stream
+Mime Type of f.jar is application/octet-stream
+Mime Type of Non-Disclosure Agreement.docx is application/octet-stream
+Mime Type of W9 Form.pddf is application/octet-stream</p>
+
+<p><em>2. Write yourself</em></p>
+
+<!--more-->
+
+
+<p>```java</p>
+
+<p>private static final int PREFIX_COUNT = 20;</p>
+
+<pre><code>// PDF tag
+private static final String PDF_TAG = "25 50 44 46";
+
+// Microsoft
+private static final String DOC1_TAG = "D0 CF 11 E0 A1 B1 1A E1";
+
+// Word Document
+private static final String DOC2_TAG = "EC A5 C1 00";
+
+// Perfect Office Document
+private static final String DOC3_TAG = "CF 11 E0 A1 B1 1A E1 00";
+
+// Deskmate
+private static final String DOC4_TAG = "0D 44 4F 43";
+
+// DOCX
+private static final String DOCX_TAG = "50 4B 3 4 14 0 6 0";
+
+// RTF
+private static final String RTF_TAG = "7B 5C 72 74 66 31";
+
+public static boolean isConvertable(String filePath) {
+
+    String rawFileName = filePath;
+
+    File raw_file = new File(rawFileName);
+
+    byte[] raw_result = new byte[PREFIX_COUNT];
+
+    try {
+        InputStream raw_input = null;
+        try {
+
+            raw_input = new BufferedInputStream(new FileInputStream(raw_file));
+
+            raw_input.read(raw_result, 0, PREFIX_COUNT);
+
+        } finally {
+
+            raw_input.close();
+        }
+    } catch (FileNotFoundException ex) {
+    }
+
+    catch (IOException ex) {
+
+    }
+
+    StringBuffer byteTemp = new StringBuffer("");
+
+    for (int j = 0; j &lt; PREFIX_COUNT; j++) {
+
+        String temp = Integer.toHexString(raw_result[j]);
+
+        if (temp.length() &gt; 2) {
+            byteTemp.append(temp.substring(temp.length() - 2));
+        } else {
+            byteTemp.append(temp);
+        }
+
+        byteTemp.append(" ");
+
+    }
+
+    int doctype = findDocType(byteTemp.toString().toUpperCase());
+
+    switch (doctype) {
+
+    case 1:
+        return true;
+
+    case 2:
+        return true;
+
+    case 3:
+        return true;
+
+    default:
+        return false;
+
+    }
+
+}
+
+private static int findDocType(String prefix) {
+
+    // System.out.println(prefix);
+
+    if (prefix.startsWith(DOCX_TAG)) {
+        return 2;
+    }
+    if (prefix.startsWith(DOC1_TAG)) {
+        return 1;
+    }
+    if (prefix.startsWith(RTF_TAG)) {
+        return 3;
+    }
+
+    return 0;
+
+}
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[About how to convert docx/doc/rtf into html using JAVA]]></title>
@@ -42,15 +177,18 @@
 <p>```java</p>
 
 <pre><code>    OfficeManager officeManager = new DefaultOfficeManagerConfiguration()
-        //4 ports indicate 4 working processes to do the conversion.
-        .setPortNumbers(8100, 8101, 8102, 8103)
+        //2 ports indicate 2 working processes to do the conversion.
+        .setPortNumbers(8100, 8101)
+        //restart openoffice working process after every 30 conversions to prevent memory leak of the working process. (unsolved issue of openoffice)
+        .setMaxTasksPerProcess(30)
+        //untouched tasks in the queue that over 1200000ms will be discarded.(get a officeManager not found exception)
+        .setTaskQueueTimeout(1200000)
+        //if one task processing time over 20000ms, it will throw an exception.
+        .setTaskExecutionTimeout(20000)
         .buildOfficeManager();
 
     officeManager.start();
-
-    OfficeDocumentConverter converter = new OfficeDocumentConverter(
-            officeManager);
-
+    OfficeDocumentConverter converter = new OfficeDocumentConverter(officeManager);
     converter.convert(new File(filepath1), new File(filepath2));
 
     officeManager.stop();
@@ -58,11 +196,20 @@
 
 <p>```</p>
 
-<p>It's actually not difficult to use it, the hard part is to install it. On Mac, install OpenOffice is very easy by install a dmg file. But on linux server, it taks a little time to figure it out.</p>
+<p> On Mac, install OpenOffice is very easy by install a dmg file. But on linux server, it's better to use libreoffice instead. Libreoffice is now actively updated by The Document Foundation.</p>
 
-<p>The solution is as below:</p>
+<p> Why LibreOffice over (Apache) OpenOffice because (1) It has a better open source license. (2) It has more community support. (3) It is more rapidly developing and releasing updates</p>
 
-<p>comming soon ...</p>
+<blockquote><p>Before installing LibreOffice you need to remove existing openoffice from your system using the following command
+```
+sudo apt-get purge openoffice<em>.</em></p></blockquote>
+
+<p>sudo add-apt-repository ppa:libreoffice/ppa
+sudo apt-get update
+sudo apt-get install libreoffice
+```</p>
+
+<blockquote><p>And it's better to use singleton mode to use the officeManager.</p></blockquote>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: DOCX | KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/blog/categories/docx/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-26T00:45:03-05:00</updated>
+  <updated>2013-02-27T00:23:17-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -42,15 +42,18 @@
 <p>```java</p>
 
 <pre><code>    OfficeManager officeManager = new DefaultOfficeManagerConfiguration()
-        //4 ports indicate 4 working processes to do the conversion.
-        .setPortNumbers(8100, 8101, 8102, 8103)
+        //2 ports indicate 2 working processes to do the conversion.
+        .setPortNumbers(8100, 8101)
+        //restart openoffice working process after every 30 conversions to prevent memory leak of the working process. (unsolved issue of openoffice)
+        .setMaxTasksPerProcess(30)
+        //untouched tasks in the queue that over 1200000ms will be discarded.(get a officeManager not found exception)
+        .setTaskQueueTimeout(1200000)
+        //if one task processing time over 20000ms, it will throw an exception.
+        .setTaskExecutionTimeout(20000)
         .buildOfficeManager();
 
     officeManager.start();
-
-    OfficeDocumentConverter converter = new OfficeDocumentConverter(
-            officeManager);
-
+    OfficeDocumentConverter converter = new OfficeDocumentConverter(officeManager);
     converter.convert(new File(filepath1), new File(filepath2));
 
     officeManager.stop();
@@ -58,11 +61,20 @@
 
 <p>```</p>
 
-<p>It's actually not difficult to use it, the hard part is to install it. On Mac, install OpenOffice is very easy by install a dmg file. But on linux server, it taks a little time to figure it out.</p>
+<p> On Mac, install OpenOffice is very easy by install a dmg file. But on linux server, it's better to use libreoffice instead. Libreoffice is now actively updated by The Document Foundation.</p>
 
-<p>The solution is as below:</p>
+<p> Why LibreOffice over (Apache) OpenOffice because (1) It has a better open source license. (2) It has more community support. (3) It is more rapidly developing and releasing updates</p>
 
-<p>comming soon ...</p>
+<blockquote><p>Before installing LibreOffice you need to remove existing openoffice from your system using the following command
+```
+sudo apt-get purge openoffice<em>.</em></p></blockquote>
+
+<p>sudo add-apt-repository ppa:libreoffice/ppa
+sudo apt-get update
+sudo apt-get install libreoffice
+```</p>
+
+<blockquote><p>And it's better to use singleton mode to use the officeManager.</p></blockquote>
 ]]></content>
   </entry>
   

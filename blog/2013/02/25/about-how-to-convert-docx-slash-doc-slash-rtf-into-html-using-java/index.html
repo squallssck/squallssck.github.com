@@ -127,27 +127,48 @@
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
 </pre></td><td class='code'><pre><code class='java'><span class='line'>     <span class="n">OfficeManager</span> <span class="n">officeManager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultOfficeManagerConfiguration</span><span class="o">()</span>
-</span><span class='line'>          <span class="c1">//4 ports indicate 4 working processes to do the conversion.</span>
-</span><span class='line'>          <span class="o">.</span><span class="na">setPortNumbers</span><span class="o">(</span><span class="mi">8100</span><span class="o">,</span> <span class="mi">8101</span><span class="o">,</span> <span class="mi">8102</span><span class="o">,</span> <span class="mi">8103</span><span class="o">)</span>
+</span><span class='line'>          <span class="c1">//2 ports indicate 2 working processes to do the conversion.</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">setPortNumbers</span><span class="o">(</span><span class="mi">8100</span><span class="o">,</span> <span class="mi">8101</span><span class="o">)</span>
+</span><span class='line'>          <span class="c1">//restart openoffice working process after every 30 conversions to prevent memory leak of the working process. (unsolved issue of openoffice)</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">setMaxTasksPerProcess</span><span class="o">(</span><span class="mi">30</span><span class="o">)</span>
+</span><span class='line'>          <span class="c1">//untouched tasks in the queue that over 1200000ms will be discarded.(get a officeManager not found exception)</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">setTaskQueueTimeout</span><span class="o">(</span><span class="mi">1200000</span><span class="o">)</span>
+</span><span class='line'>          <span class="c1">//if one task processing time over 20000ms, it will throw an exception.</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">setTaskExecutionTimeout</span><span class="o">(</span><span class="mi">20000</span><span class="o">)</span>
 </span><span class='line'>          <span class="o">.</span><span class="na">buildOfficeManager</span><span class="o">();</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="n">officeManager</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="n">OfficeDocumentConverter</span> <span class="n">converter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OfficeDocumentConverter</span><span class="o">(</span>
-</span><span class='line'>              <span class="n">officeManager</span><span class="o">);</span>
-</span><span class='line'>
+</span><span class='line'>      <span class="n">OfficeDocumentConverter</span> <span class="n">converter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OfficeDocumentConverter</span><span class="o">(</span><span class="n">officeManager</span><span class="o">);</span>
 </span><span class='line'>      <span class="n">converter</span><span class="o">.</span><span class="na">convert</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">filepath1</span><span class="o">),</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">filepath2</span><span class="o">));</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="n">officeManager</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>It&#8217;s actually not difficult to use it, the hard part is to install it. On Mac, install OpenOffice is very easy by install a dmg file. But on linux server, it taks a little time to figure it out.</p>
+<p> On Mac, install OpenOffice is very easy by install a dmg file. But on linux server, it&#8217;s better to use libreoffice instead. Libreoffice is now actively updated by The Document Foundation.</p>
 
-<p>The solution is as below:</p>
+<p> Why LibreOffice over (Apache) OpenOffice because (1) It has a better open source license. (2) It has more community support. (3) It is more rapidly developing and releasing updates</p>
 
-<p>comming soon &#8230;</p>
+<blockquote><p>Before installing LibreOffice you need to remove existing openoffice from your system using the following command</p></blockquote>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">purge</span> <span class="n">openoffice</span><span class="o">*.*</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="nl">ppa:</span><span class="n">libreoffice</span><span class="o">/</span><span class="n">ppa</span>
+</span><span class='line'><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+</span><span class='line'><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libreoffice</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>And it&#8217;s better to use singleton mode to use the officeManager.</p></blockquote>
 </div>
 
 
@@ -227,7 +248,7 @@
   <ul id="categories">
     <li class='category'><a href='/blog/categories/doc/'>DOC (1)</a></li>
 <li class='category'><a href='/blog/categories/docx/'>DOCX (1)</a></li>
-<li class='category'><a href='/blog/categories/java/'>JAVA (3)</a></li>
+<li class='category'><a href='/blog/categories/java/'>JAVA (4)</a></li>
 <li class='category'><a href='/blog/categories/journal/'>JOURNAL (1)</a></li>
 <li class='category'><a href='/blog/categories/machine-learning/'>MACHINE_LEARNING (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>OCTOPRESS (2)</a></li>
@@ -235,11 +256,16 @@
 <li class='category'><a href='/blog/categories/rtf/'>RTF (1)</a></li>
 <li class='category'><a href='/blog/categories/svm/'>SVM (1)</a></li>
 <li class='category'><a href='/blog/categories/test/'>TEST (1)</a></li>
+<li class='category'><a href='/blog/categories/utility/'>UTILITY (1)</a></li>
 
   </ul>
 </section><section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/26/about-how-to-get-mime-types-using-java/">About how to get mime types using Java</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/02/26/journal/">journal</a>
@@ -255,10 +281,6 @@
     
       <li class="post">
         <a href="/blog/2013/02/24/chinese-language-test-in-octopress/">Octopress的中文使用测试</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/24/some-octopress-tips/">Some octopress tips</a>
       </li>
     
   </ul>

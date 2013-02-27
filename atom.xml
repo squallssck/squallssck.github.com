@@ -4,7 +4,7 @@
   <title><![CDATA[KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-26T00:45:03-05:00</updated>
+  <updated>2013-02-27T00:23:17-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -12,6 +12,245 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[About how to get mime types using Java]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/26/about-how-to-get-mime-types-using-java/"/>
+    <updated>2013-02-26T13:14:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/26/about-how-to-get-mime-types-using-java</id>
+    <content type="html"><![CDATA[<p><em>1. using javax.activation.MimetypesFileTypeMap</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="n">File</span> <span class="n">f</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&quot;test.docx&quot;</span><span class="o">);</span>
+</span><span class='line'> <span class="n">String</span> <span class="n">mimeType</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MimetypesFileTypeMap</span><span class="o">().</span><span class="na">getContentType</span><span class="o">(</span><span class="n">f</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>result:
+Mime Type of .DS_Store is application/octet-stream
+Mime Type of 444.docx is application/octet-stream
+Mime Type of f.jar is application/octet-stream
+Mime Type of Non-Disclosure Agreement.docx is application/octet-stream
+Mime Type of W9 Form.pddf is application/octet-stream</p>
+
+<p><em>2. Write yourself</em></p>
+
+<!--more-->
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">PREFIX_COUNT</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// PDF tag</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">PDF_TAG</span> <span class="o">=</span> <span class="s">&quot;25 50 44 46&quot;</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// Microsoft</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOC1_TAG</span> <span class="o">=</span> <span class="s">&quot;D0 CF 11 E0 A1 B1 1A E1&quot;</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// Word Document</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOC2_TAG</span> <span class="o">=</span> <span class="s">&quot;EC A5 C1 00&quot;</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// Perfect Office Document</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOC3_TAG</span> <span class="o">=</span> <span class="s">&quot;CF 11 E0 A1 B1 1A E1 00&quot;</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// Deskmate</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOC4_TAG</span> <span class="o">=</span> <span class="s">&quot;0D 44 4F 43&quot;</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// DOCX</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOCX_TAG</span> <span class="o">=</span> <span class="s">&quot;50 4B 3 4 14 0 6 0&quot;</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// RTF</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">RTF_TAG</span> <span class="o">=</span> <span class="s">&quot;7B 5C 72 74 66 31&quot;</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isConvertable</span><span class="o">(</span><span class="n">String</span> <span class="n">filePath</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">String</span> <span class="n">rawFileName</span> <span class="o">=</span> <span class="n">filePath</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">File</span> <span class="n">raw_file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">rawFileName</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="kt">byte</span><span class="o">[]</span> <span class="n">raw_result</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="n">PREFIX_COUNT</span><span class="o">];</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>          <span class="n">InputStream</span> <span class="n">raw_input</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span><span class='line'>          <span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="n">raw_input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedInputStream</span><span class="o">(</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">raw_file</span><span class="o">));</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="n">raw_input</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">raw_result</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">PREFIX_COUNT</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="n">raw_input</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span><span class='line'>          <span class="o">}</span>
+</span><span class='line'>      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">FileNotFoundException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">StringBuffer</span> <span class="n">byteTemp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">(</span><span class="s">&quot;&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">PREFIX_COUNT</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">String</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">toHexString</span><span class="o">(</span><span class="n">raw_result</span><span class="o">[</span><span class="n">j</span><span class="o">]);</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="k">if</span> <span class="o">(</span><span class="n">temp</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>              <span class="n">byteTemp</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">temp</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">temp</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">2</span><span class="o">));</span>
+</span><span class='line'>          <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span><span class='line'>              <span class="n">byteTemp</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">temp</span><span class="o">);</span>
+</span><span class='line'>          <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">byteTemp</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot; &quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="kt">int</span> <span class="n">doctype</span> <span class="o">=</span> <span class="n">findDocType</span><span class="o">(</span><span class="n">byteTemp</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">toUpperCase</span><span class="o">());</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">switch</span> <span class="o">(</span><span class="n">doctype</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+</span><span class='line'>          <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+</span><span class='line'>          
+</span><span class='line'>      <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+</span><span class='line'>          <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+</span><span class='line'>          <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">default</span><span class="o">:</span>
+</span><span class='line'>          <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">findDocType</span><span class="o">(</span><span class="n">String</span> <span class="n">prefix</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1">// System.out.println(prefix);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">if</span> <span class="o">(</span><span class="n">prefix</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="n">DOCX_TAG</span><span class="o">))</span> <span class="o">{</span>
+</span><span class='line'>          <span class="k">return</span> <span class="mi">2</span><span class="o">;</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>      <span class="k">if</span> <span class="o">(</span><span class="n">prefix</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="n">DOC1_TAG</span><span class="o">))</span> <span class="o">{</span>
+</span><span class='line'>          <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>      <span class="k">if</span> <span class="o">(</span><span class="n">prefix</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="n">RTF_TAG</span><span class="o">))</span> <span class="o">{</span>
+</span><span class='line'>          <span class="k">return</span> <span class="mi">3</span><span class="o">;</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[journal]]></title>
@@ -72,27 +311,48 @@
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
 </pre></td><td class='code'><pre><code class='java'><span class='line'>     <span class="n">OfficeManager</span> <span class="n">officeManager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultOfficeManagerConfiguration</span><span class="o">()</span>
-</span><span class='line'>          <span class="c1">//4 ports indicate 4 working processes to do the conversion.</span>
-</span><span class='line'>          <span class="o">.</span><span class="na">setPortNumbers</span><span class="o">(</span><span class="mi">8100</span><span class="o">,</span> <span class="mi">8101</span><span class="o">,</span> <span class="mi">8102</span><span class="o">,</span> <span class="mi">8103</span><span class="o">)</span>
+</span><span class='line'>          <span class="c1">//2 ports indicate 2 working processes to do the conversion.</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">setPortNumbers</span><span class="o">(</span><span class="mi">8100</span><span class="o">,</span> <span class="mi">8101</span><span class="o">)</span>
+</span><span class='line'>          <span class="c1">//restart openoffice working process after every 30 conversions to prevent memory leak of the working process. (unsolved issue of openoffice)</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">setMaxTasksPerProcess</span><span class="o">(</span><span class="mi">30</span><span class="o">)</span>
+</span><span class='line'>          <span class="c1">//untouched tasks in the queue that over 1200000ms will be discarded.(get a officeManager not found exception)</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">setTaskQueueTimeout</span><span class="o">(</span><span class="mi">1200000</span><span class="o">)</span>
+</span><span class='line'>          <span class="c1">//if one task processing time over 20000ms, it will throw an exception.</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">setTaskExecutionTimeout</span><span class="o">(</span><span class="mi">20000</span><span class="o">)</span>
 </span><span class='line'>          <span class="o">.</span><span class="na">buildOfficeManager</span><span class="o">();</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="n">officeManager</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="n">OfficeDocumentConverter</span> <span class="n">converter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OfficeDocumentConverter</span><span class="o">(</span>
-</span><span class='line'>              <span class="n">officeManager</span><span class="o">);</span>
-</span><span class='line'>
+</span><span class='line'>      <span class="n">OfficeDocumentConverter</span> <span class="n">converter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OfficeDocumentConverter</span><span class="o">(</span><span class="n">officeManager</span><span class="o">);</span>
 </span><span class='line'>      <span class="n">converter</span><span class="o">.</span><span class="na">convert</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">filepath1</span><span class="o">),</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">filepath2</span><span class="o">));</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="n">officeManager</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>It&#8217;s actually not difficult to use it, the hard part is to install it. On Mac, install OpenOffice is very easy by install a dmg file. But on linux server, it taks a little time to figure it out.</p>
+<p> On Mac, install OpenOffice is very easy by install a dmg file. But on linux server, it&#8217;s better to use libreoffice instead. Libreoffice is now actively updated by The Document Foundation.</p>
 
-<p>The solution is as below:</p>
+<p> Why LibreOffice over (Apache) OpenOffice because (1) It has a better open source license. (2) It has more community support. (3) It is more rapidly developing and releasing updates</p>
 
-<p>comming soon &#8230;</p>
+<blockquote><p>Before installing LibreOffice you need to remove existing openoffice from your system using the following command</p></blockquote>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">purge</span> <span class="n">openoffice</span><span class="o">*.*</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="nl">ppa:</span><span class="n">libreoffice</span><span class="o">/</span><span class="n">ppa</span>
+</span><span class='line'><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+</span><span class='line'><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libreoffice</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>And it&#8217;s better to use singleton mode to use the officeManager.</p></blockquote>
 ]]></content>
   </entry>
   

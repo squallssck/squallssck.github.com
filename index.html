@@ -9,7 +9,8 @@
   <meta name="author" content="squallssck">
 
   
-  <meta name="description" content="今天做了一些关于Docx转换Html的研究, 发现Java现在并无什么很完美的解决方案, 主要是转换效果不佳, 公司想要的Header里的图片没有任何一个Java的开源解决方案可以完美的转换的. 一天搞来搞去, 没有任何成果. 这半年时间做开发的工作, 感觉自己并非非常关心具体的细节实现, &hellip;">
+  <meta name="description" content="1. using javax.activation.MimetypesFileTypeMap 1
+2 File f = new File(&quot;test.docx&quot;); String mimeType = new MimetypesFileTypeMap(). &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +66,65 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/26/about-how-to-get-mime-types-using-java/">About How to Get Mime Types Using Java</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-26T13:14:00-05:00" pubdate data-updated="true">Feb 26<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/02/26/about-how-to-get-mime-types-using-java/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><em>1. using javax.activation.MimetypesFileTypeMap</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="n">File</span> <span class="n">f</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&quot;test.docx&quot;</span><span class="o">);</span>
+</span><span class='line'> <span class="n">String</span> <span class="n">mimeType</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MimetypesFileTypeMap</span><span class="o">().</span><span class="na">getContentType</span><span class="o">(</span><span class="n">f</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>result:
+Mime Type of .DS_Store is application/octet-stream
+Mime Type of 444.docx is application/octet-stream
+Mime Type of f.jar is application/octet-stream
+Mime Type of Non-Disclosure Agreement.docx is application/octet-stream
+Mime Type of W9 Form.pddf is application/octet-stream</p>
+
+<p><em>2. Write yourself</em></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/02/26/about-how-to-get-mime-types-using-java/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -466,7 +526,7 @@ then you can use img tag as</p>
   <ul id="categories">
     <li class='category'><a href='/blog/categories/doc/'>DOC (1)</a></li>
 <li class='category'><a href='/blog/categories/docx/'>DOCX (1)</a></li>
-<li class='category'><a href='/blog/categories/java/'>JAVA (3)</a></li>
+<li class='category'><a href='/blog/categories/java/'>JAVA (4)</a></li>
 <li class='category'><a href='/blog/categories/journal/'>JOURNAL (1)</a></li>
 <li class='category'><a href='/blog/categories/machine-learning/'>MACHINE_LEARNING (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>OCTOPRESS (2)</a></li>
@@ -474,11 +534,16 @@ then you can use img tag as</p>
 <li class='category'><a href='/blog/categories/rtf/'>RTF (1)</a></li>
 <li class='category'><a href='/blog/categories/svm/'>SVM (1)</a></li>
 <li class='category'><a href='/blog/categories/test/'>TEST (1)</a></li>
+<li class='category'><a href='/blog/categories/utility/'>UTILITY (1)</a></li>
 
   </ul>
 </section><section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/26/about-how-to-get-mime-types-using-java/">About how to get mime types using Java</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/02/26/journal/">journal</a>
@@ -494,10 +559,6 @@ then you can use img tag as</p>
     
       <li class="post">
         <a href="/blog/2013/02/24/chinese-language-test-in-octopress/">Octopress的中文使用测试</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/24/some-octopress-tips/">Some octopress tips</a>
       </li>
     
   </ul>
