@@ -4,7 +4,7 @@
   <title><![CDATA[KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-27T00:23:17-05:00</updated>
+  <updated>2013-02-27T00:27:34-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -277,24 +277,7 @@ Mime Type of W9 Form.pddf is application/octet-stream</p>
     <link href="http://squallssck.github.com/blog/2013/02/25/about-how-to-convert-docx-slash-doc-slash-rtf-into-html-using-java/"/>
     <updated>2013-02-25T12:06:00-05:00</updated>
     <id>http://squallssck.github.com/blog/2013/02/25/about-how-to-convert-docx-slash-doc-slash-rtf-into-html-using-java</id>
-    <content type="html"><![CDATA[<p>comming soon&#8230;</p>
-
-<p><strong>1. DOCX</strong></p>
-
-<blockquote></blockquote>
-
-<p><strong>2. DOC</strong></p>
-
-<blockquote></blockquote>
-
-<p><strong>3. RTF</strong></p>
-
-<blockquote></blockquote>
-
-<!--more-->
-
-
-<p>Actually, there is one solution, &#8220;One sulution to rule them all&#8221; . That is to use OpenOffice as the background service to convert them all. You can implement this remote call by yourself, but someone already wrote a java library to provide a high level API for us to use called JODConverter.</p>
+    <content type="html"><![CDATA[<p>Actually, there is one solution, &#8220;One sulution to rule them all&#8221; . That is to use OpenOffice as the background service to convert them all. You can implement this remote call by yourself, but someone already wrote a java library to provide a high level API for us to use called JODConverter.</p>
 
 <p>http://code.google.com/p/jodconverter/</p>
 
@@ -331,6 +314,11 @@ Mime Type of W9 Form.pddf is application/octet-stream</p>
 </span><span class='line'>
 </span><span class='line'>      <span class="n">officeManager</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>
 </span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!--more-->
 
 
 <p> On Mac, install OpenOffice is very easy by install a dmg file. But on linux server, it&#8217;s better to use libreoffice instead. Libreoffice is now actively updated by The Document Foundation.</p>

@@ -205,19 +205,46 @@ Mime Type of W9 Form.pddf is application/octet-stream</p>
   </header>
 
 
-  <div class="entry-content"><p>comming soon&#8230;</p>
+  <div class="entry-content"><p>Actually, there is one solution, &#8220;One sulution to rule them all&#8221; . That is to use OpenOffice as the background service to convert them all. You can implement this remote call by yourself, but someone already wrote a java library to provide a high level API for us to use called JODConverter.</p>
 
-<p><strong>1. DOCX</strong></p>
+<p>http://code.google.com/p/jodconverter/</p>
 
-<blockquote></blockquote>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'>     <span class="n">OfficeManager</span> <span class="n">officeManager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultOfficeManagerConfiguration</span><span class="o">()</span>
+</span><span class='line'>          <span class="c1">//2 ports indicate 2 working processes to do the conversion.</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">setPortNumbers</span><span class="o">(</span><span class="mi">8100</span><span class="o">,</span> <span class="mi">8101</span><span class="o">)</span>
+</span><span class='line'>          <span class="c1">//restart openoffice working process after every 30 conversions to prevent memory leak of the working process. (unsolved issue of openoffice)</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">setMaxTasksPerProcess</span><span class="o">(</span><span class="mi">30</span><span class="o">)</span>
+</span><span class='line'>          <span class="c1">//untouched tasks in the queue that over 1200000ms will be discarded.(get a officeManager not found exception)</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">setTaskQueueTimeout</span><span class="o">(</span><span class="mi">1200000</span><span class="o">)</span>
+</span><span class='line'>          <span class="c1">//if one task processing time over 20000ms, it will throw an exception.</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">setTaskExecutionTimeout</span><span class="o">(</span><span class="mi">20000</span><span class="o">)</span>
+</span><span class='line'>          <span class="o">.</span><span class="na">buildOfficeManager</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">officeManager</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+</span><span class='line'>      <span class="n">OfficeDocumentConverter</span> <span class="n">converter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OfficeDocumentConverter</span><span class="o">(</span><span class="n">officeManager</span><span class="o">);</span>
+</span><span class='line'>      <span class="n">converter</span><span class="o">.</span><span class="na">convert</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">filepath1</span><span class="o">),</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">filepath2</span><span class="o">));</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">officeManager</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p><strong>2. DOC</strong></p>
 
-<blockquote></blockquote>
 
-<p><strong>3. RTF</strong></p>
-
-<blockquote></blockquote>
 
 </div>
   
