@@ -4,7 +4,7 @@
   <title><![CDATA[KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-27T00:29:36-05:00</updated>
+  <updated>2013-02-27T00:34:05-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -177,7 +177,7 @@
 </span><span class='line'>  <span class="c1">// RTF</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">RTF_TAG</span> <span class="o">=</span> <span class="s">&quot;7B 5C 72 74 66 31&quot;</span><span class="o">;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isConvertable</span><span class="o">(</span><span class="n">String</span> <span class="n">filePath</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>  <span class="kd">public</span> <span class="kd">static</span> <span class="n">string</span> <span class="nf">getMimeType</span><span class="o">(</span><span class="n">String</span> <span class="n">filePath</span><span class="o">)</span> <span class="o">{</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="n">String</span> <span class="n">rawFileName</span> <span class="o">=</span> <span class="n">filePath</span><span class="o">;</span>
 </span><span class='line'>
@@ -225,16 +225,16 @@
 </span><span class='line'>      <span class="k">switch</span> <span class="o">(</span><span class="n">doctype</span><span class="o">)</span> <span class="o">{</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
-</span><span class='line'>          <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+</span><span class='line'>          <span class="k">return</span> <span class="s">&quot;filetype:doc&quot;</span><span class="o">;</span>
 </span><span class='line'>          
 </span><span class='line'>      <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
-</span><span class='line'>          <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+</span><span class='line'>          <span class="k">return</span> <span class="s">&quot;filetype:docx&quot;</span><span class="o">;</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
-</span><span class='line'>          <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+</span><span class='line'>          <span class="k">return</span> <span class="s">&quot;filetype:rtf&quot;</span><span class="o">;</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="k">default</span><span class="o">:</span>
-</span><span class='line'>          <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span><span class='line'>          <span class="k">return</span> <span class="s">&quot;filetype:unknow&quot;</span><span class="o">;</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="o">}</span>
 </span><span class='line'>

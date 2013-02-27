@@ -4,7 +4,7 @@
   <title><![CDATA[Category: UTILITY | KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/blog/categories/utility/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-27T00:29:36-05:00</updated>
+  <updated>2013-02-27T00:34:05-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -64,7 +64,7 @@ private static final String DOCX_TAG = "50 4B 3 4 14 0 6 0";
 // RTF
 private static final String RTF_TAG = "7B 5C 72 74 66 31";
 
-public static boolean isConvertable(String filePath) {
+public static string getMimeType(String filePath) {
 
     String rawFileName = filePath;
 
@@ -112,16 +112,16 @@ public static boolean isConvertable(String filePath) {
     switch (doctype) {
 
     case 1:
-        return true;
+        return "filetype:doc";
 
     case 2:
-        return true;
+        return "filetype:docx";
 
     case 3:
-        return true;
+        return "filetype:rtf";
 
     default:
-        return false;
+        return "filetype:unknow";
 
     }
 
