@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JAVA | KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-27T00:34:05-05:00</updated>
+  <updated>2013-02-27T00:52:03-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Java Core Series 2: About Java Socket]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/27/about-java-socket/"/>
+    <updated>2013-02-27T00:48:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/27/about-java-socket</id>
+    <content type="html"><![CDATA[<p>COMMING SOON ...</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java Core Series 1: About Java IO]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/27/about-java-io/"/>
+    <updated>2013-02-27T00:39:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/27/about-java-io</id>
+    <content type="html"><![CDATA[<p>COMMING SOON ...</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[About how to get mime types using Java]]></title>
@@ -41,26 +59,20 @@ Mime Type of W9 Form.pddf is application/octet-stream
 
 <p>```java</p>
 
-<p>private static final int PREFIX_COUNT = 20;</p>
+<pre><code>private static final int PREFIX_COUNT = 20;
 
-<pre><code>// PDF tag
+// PDF tag
 private static final String PDF_TAG = "25 50 44 46";
-
 // Microsoft
 private static final String DOC1_TAG = "D0 CF 11 E0 A1 B1 1A E1";
-
 // Word Document
 private static final String DOC2_TAG = "EC A5 C1 00";
-
 // Perfect Office Document
 private static final String DOC3_TAG = "CF 11 E0 A1 B1 1A E1 00";
-
 // Deskmate
 private static final String DOC4_TAG = "0D 44 4F 43";
-
 // DOCX
 private static final String DOCX_TAG = "50 4B 3 4 14 0 6 0";
-
 // RTF
 private static final String RTF_TAG = "7B 5C 72 74 66 31";
 
@@ -88,6 +100,8 @@ public static string getMimeType(String filePath) {
     }
 
     catch (IOException ex) {
+
+        e.printStackTrace();
 
     }
 
@@ -209,43 +223,6 @@ sudo apt-get install libreoffice
     <content type="html"><![CDATA[<p><strong>A real example from data preparing to train the model to finally do the classification included</strong></p>
 
 <p>Comming soon...</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[About pdfs with only owner's password deciphere by using pdfbox]]></title>
-    <link href="http://squallssck.github.com/blog/2013/02/24/about-pdfs-with-only-owners-password-deciphere-by-using-pdfbox/"/>
-    <updated>2013-02-24T18:59:00-05:00</updated>
-    <id>http://squallssck.github.com/blog/2013/02/24/about-pdfs-with-only-owners-password-deciphere-by-using-pdfbox</id>
-    <content type="html"><![CDATA[<p>Some pdfs have owner password to prevent user from copying, extracting or printing ... etc ...</p>
-
-<p>By using pdf box, you can easily deciphere this kind of open and read only pdfs.</p>
-
-<p>```java</p>
-
-<pre><code>    PDDocument document = PDDocument.load(filePath, true);
-
-    if (document.isEncrypted()) {
-        try {
-            document.decrypt("");
-            document.setAllSecurityToBeRemoved(true);
-        } catch (Exception e) {
-            throw new UnableToDeciphereException("The document is encrypted, and we can't decrypt it.", e);
-        }
-    }
-
-    ByteArrayOutputStream outStream = new ByteArrayOutputStream();
-
-    document.save(outStream);
-
-    document.close();
-
-    byte[] decipheredBytes = outStream.toByteArray();
-</code></pre>
-
-<p>```</p>
-
-<p>or you can use a FileOutputStream to save it into a file. Actually, document.save() has a parameter filepath, so you can , for example : document.save("/Users/User/Desktop/abc.pdf") .</p>
 ]]></content>
   </entry>
   

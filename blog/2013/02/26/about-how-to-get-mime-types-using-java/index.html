@@ -226,30 +226,20 @@
 <span class='line-number'>97</span>
 <span class='line-number'>98</span>
 <span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">PREFIX_COUNT</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">PREFIX_COUNT</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>
 </span><span class='line'>
 </span><span class='line'>  <span class="c1">// PDF tag</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">PDF_TAG</span> <span class="o">=</span> <span class="s">&quot;25 50 44 46&quot;</span><span class="o">;</span>
-</span><span class='line'>
 </span><span class='line'>  <span class="c1">// Microsoft</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOC1_TAG</span> <span class="o">=</span> <span class="s">&quot;D0 CF 11 E0 A1 B1 1A E1&quot;</span><span class="o">;</span>
-</span><span class='line'>
 </span><span class='line'>  <span class="c1">// Word Document</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOC2_TAG</span> <span class="o">=</span> <span class="s">&quot;EC A5 C1 00&quot;</span><span class="o">;</span>
-</span><span class='line'>
 </span><span class='line'>  <span class="c1">// Perfect Office Document</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOC3_TAG</span> <span class="o">=</span> <span class="s">&quot;CF 11 E0 A1 B1 1A E1 00&quot;</span><span class="o">;</span>
-</span><span class='line'>
 </span><span class='line'>  <span class="c1">// Deskmate</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOC4_TAG</span> <span class="o">=</span> <span class="s">&quot;0D 44 4F 43&quot;</span><span class="o">;</span>
-</span><span class='line'>
 </span><span class='line'>  <span class="c1">// DOCX</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOCX_TAG</span> <span class="o">=</span> <span class="s">&quot;50 4B 3 4 14 0 6 0&quot;</span><span class="o">;</span>
-</span><span class='line'>
 </span><span class='line'>  <span class="c1">// RTF</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">RTF_TAG</span> <span class="o">=</span> <span class="s">&quot;7B 5C 72 74 66 31&quot;</span><span class="o">;</span>
 </span><span class='line'>
@@ -277,6 +267,8 @@
 </span><span class='line'>      <span class="o">}</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="o">}</span>
 </span><span class='line'>
@@ -383,6 +375,8 @@
         <a class="basic-alignment left" href="/blog/2013/02/26/journal/" title="Previous Post: journal">&laquo; journal</a>
       
       
+        <a class="basic-alignment right" href="/blog/2013/02/27/about-java-io/" title="Next Post: Java Core Series 1: About Java IO">Java Core Series 1: About Java IO &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -410,14 +404,17 @@
 <section>
   <h1>Categories</h1>
   <ul id="categories">
-    <li class='category'><a href='/blog/categories/doc/'>DOC (1)</a></li>
+    <li class='category'><a href='/blog/categories/core/'>CORE (2)</a></li>
+<li class='category'><a href='/blog/categories/doc/'>DOC (1)</a></li>
 <li class='category'><a href='/blog/categories/docx/'>DOCX (1)</a></li>
-<li class='category'><a href='/blog/categories/java/'>JAVA (4)</a></li>
+<li class='category'><a href='/blog/categories/io/'>IO (1)</a></li>
+<li class='category'><a href='/blog/categories/java/'>JAVA (6)</a></li>
 <li class='category'><a href='/blog/categories/journal/'>JOURNAL (1)</a></li>
 <li class='category'><a href='/blog/categories/machine-learning/'>MACHINE_LEARNING (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>OCTOPRESS (2)</a></li>
 <li class='category'><a href='/blog/categories/pdf/'>PDF (1)</a></li>
 <li class='category'><a href='/blog/categories/rtf/'>RTF (1)</a></li>
+<li class='category'><a href='/blog/categories/socket/'>SOCKET (1)</a></li>
 <li class='category'><a href='/blog/categories/svm/'>SVM (1)</a></li>
 <li class='category'><a href='/blog/categories/test/'>TEST (1)</a></li>
 <li class='category'><a href='/blog/categories/utility/'>UTILITY (1)</a></li>
@@ -426,6 +423,14 @@
 </section><section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/27/about-java-socket/">Java Core Series 2: About Java Socket</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/27/about-java-io/">Java Core Series 1: About Java IO</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/02/26/about-how-to-get-mime-types-using-java/">About how to get mime types using Java</a>
@@ -437,14 +442,6 @@
     
       <li class="post">
         <a href="/blog/2013/02/25/about-how-to-convert-docx-slash-doc-slash-rtf-into-html-using-java/">About how to convert docx/doc/rtf into html using JAVA</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/25/about-using-java-version-libsvm-do-classcification/">How to use libsvm to do classification with java</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/02/24/chinese-language-test-in-octopress/">Octopress的中文使用测试</a>
       </li>
     
   </ul>

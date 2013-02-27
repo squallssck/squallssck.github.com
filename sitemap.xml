@@ -40,7 +40,15 @@
         <loc>
             http://squallssck.github.com/blog/2013/02/26/about-how-to-get-mime-types-using-java/
         </loc>
-        <lastmod>2013-02-27T00:34:01-05:00</lastmod>
+        <lastmod>2013-02-27T00:36:17-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://squallssck.github.com/blog/2013/02/27/about-java-io/</loc>
+        <lastmod>2013-02-27T00:51:48-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://squallssck.github.com/blog/2013/02/27/about-java-socket/</loc>
+        <lastmod>2013-02-27T00:51:56-05:00</lastmod>
     </url>
     <url>
         <loc>http://squallssck.github.com/about/</loc>
@@ -48,11 +56,11 @@
     </url>
     <url>
         <loc>http://squallssck.github.com/blog/archives/</loc>
-        <lastmod>2013-02-27T00:34:01-05:00</lastmod>
+        <lastmod>2013-02-27T00:51:56-05:00</lastmod>
     </url>
     <url>
         <loc>http://squallssck.github.com/</loc>
-        <lastmod>2013-02-27T00:34:01-05:00</lastmod>
+        <lastmod>2013-02-27T00:51:56-05:00</lastmod>
     </url>
     <url>
         <loc>http://squallssck.github.com/robots.txt</loc>

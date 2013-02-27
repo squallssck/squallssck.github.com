@@ -4,7 +4,7 @@
   <title><![CDATA[Category: UTILITY | KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/blog/categories/utility/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-27T00:34:05-05:00</updated>
+  <updated>2013-02-27T00:52:03-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -41,26 +41,20 @@ Mime Type of W9 Form.pddf is application/octet-stream
 
 <p>```java</p>
 
-<p>private static final int PREFIX_COUNT = 20;</p>
+<pre><code>private static final int PREFIX_COUNT = 20;
 
-<pre><code>// PDF tag
+// PDF tag
 private static final String PDF_TAG = "25 50 44 46";
-
 // Microsoft
 private static final String DOC1_TAG = "D0 CF 11 E0 A1 B1 1A E1";
-
 // Word Document
 private static final String DOC2_TAG = "EC A5 C1 00";
-
 // Perfect Office Document
 private static final String DOC3_TAG = "CF 11 E0 A1 B1 1A E1 00";
-
 // Deskmate
 private static final String DOC4_TAG = "0D 44 4F 43";
-
 // DOCX
 private static final String DOCX_TAG = "50 4B 3 4 14 0 6 0";
-
 // RTF
 private static final String RTF_TAG = "7B 5C 72 74 66 31";
 
@@ -88,6 +82,8 @@ public static string getMimeType(String filePath) {
     }
 
     catch (IOException ex) {
+
+        e.printStackTrace();
 
     }
 

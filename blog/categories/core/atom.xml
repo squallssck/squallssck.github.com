@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: CORE | KC's Core Java World]]></title>
+  <link href="http://squallssck.github.com/blog/categories/core/atom.xml" rel="self"/>
+  <link href="http://squallssck.github.com/"/>
+  <updated>2013-02-27T00:52:03-05:00</updated>
+  <id>http://squallssck.github.com/</id>
+  <author>
+    <name><![CDATA[squallssck]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Java Core Series 2: About Java Socket]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/27/about-java-socket/"/>
+    <updated>2013-02-27T00:48:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/27/about-java-socket</id>
+    <content type="html"><![CDATA[<p>COMMING SOON ...</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java Core Series 1: About Java IO]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/27/about-java-io/"/>
+    <updated>2013-02-27T00:39:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/27/about-java-io</id>
+    <content type="html"><![CDATA[<p>COMMING SOON ...</p>
+]]></content>
+  </entry>
+  
+</feed>

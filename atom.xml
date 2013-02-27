@@ -4,7 +4,7 @@
   <title><![CDATA[KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-27T00:34:05-05:00</updated>
+  <updated>2013-02-27T00:52:03-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Java Core Series 2: About Java Socket]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/27/about-java-socket/"/>
+    <updated>2013-02-27T00:48:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/27/about-java-socket</id>
+    <content type="html"><![CDATA[<p>COMMING SOON &#8230;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java Core Series 1: About Java IO]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/27/about-java-io/"/>
+    <updated>2013-02-27T00:39:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/27/about-java-io</id>
+    <content type="html"><![CDATA[<p>COMMING SOON &#8230;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[About how to get mime types using Java]]></title>
@@ -150,30 +168,20 @@
 <span class='line-number'>97</span>
 <span class='line-number'>98</span>
 <span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">PREFIX_COUNT</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'> <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">PREFIX_COUNT</span> <span class="o">=</span> <span class="mi">20</span><span class="o">;</span>
 </span><span class='line'>
 </span><span class='line'>  <span class="c1">// PDF tag</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">PDF_TAG</span> <span class="o">=</span> <span class="s">&quot;25 50 44 46&quot;</span><span class="o">;</span>
-</span><span class='line'>
 </span><span class='line'>  <span class="c1">// Microsoft</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOC1_TAG</span> <span class="o">=</span> <span class="s">&quot;D0 CF 11 E0 A1 B1 1A E1&quot;</span><span class="o">;</span>
-</span><span class='line'>
 </span><span class='line'>  <span class="c1">// Word Document</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOC2_TAG</span> <span class="o">=</span> <span class="s">&quot;EC A5 C1 00&quot;</span><span class="o">;</span>
-</span><span class='line'>
 </span><span class='line'>  <span class="c1">// Perfect Office Document</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOC3_TAG</span> <span class="o">=</span> <span class="s">&quot;CF 11 E0 A1 B1 1A E1 00&quot;</span><span class="o">;</span>
-</span><span class='line'>
 </span><span class='line'>  <span class="c1">// Deskmate</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOC4_TAG</span> <span class="o">=</span> <span class="s">&quot;0D 44 4F 43&quot;</span><span class="o">;</span>
-</span><span class='line'>
 </span><span class='line'>  <span class="c1">// DOCX</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DOCX_TAG</span> <span class="o">=</span> <span class="s">&quot;50 4B 3 4 14 0 6 0&quot;</span><span class="o">;</span>
-</span><span class='line'>
 </span><span class='line'>  <span class="c1">// RTF</span>
 </span><span class='line'>  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">RTF_TAG</span> <span class="o">=</span> <span class="s">&quot;7B 5C 72 74 66 31&quot;</span><span class="o">;</span>
 </span><span class='line'>
@@ -201,6 +209,8 @@
 </span><span class='line'>      <span class="o">}</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="o">}</span>
 </span><span class='line'>
