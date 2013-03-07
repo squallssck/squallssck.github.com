@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NODEJS | KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/blog/categories/nodejs/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-03-07T15:04:55-05:00</updated>
+  <updated>2013-03-07T15:40:22-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -18,7 +18,11 @@
     <link href="http://squallssck.github.com/blog/2013/03/07/about-how-to-make-phantomjs-support-google-web-fonts/"/>
     <updated>2013-03-07T14:57:00-05:00</updated>
     <id>http://squallssck.github.com/blog/2013/03/07/about-how-to-make-phantomjs-support-google-web-fonts</id>
-    <content type="html"><![CDATA[<blockquote><p>1) Checkout PhantomJS 1.X version as described in the official instruction: http://phantomjs.org/build.html</p></blockquote>
+    <content type="html"><![CDATA[<p>Currently, 1.8.1 version doesn't support WOFF files, a fix is to use</p>
+
+<p>https://github.com/Vitallium 's commit which has fixed WOFF file support issue.</p>
+
+<blockquote><p>1) Checkout PhantomJS 1.X version as described in the official instruction: http://phantomjs.org/build.html</p></blockquote>
 
 <p>```
 // For Ubuntu Linux (tested on a barebone install of Ubuntu 10.04 Lucid Lynx and Ubuntu 11.04 Natty Narwhal):</p>
