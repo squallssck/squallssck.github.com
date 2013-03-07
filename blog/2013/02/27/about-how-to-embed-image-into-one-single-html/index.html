@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>About how to embed image into one single html - KC's Core Java World</title>
+  <meta name="author" content="squallssck">
+
+  
+  <meta name="description" content="1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://squallssck.github.com/blog/2013/02/27/about-how-to-embed-image-into-one-single-html/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="KC's Core Java World" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">KC's Core Java World</a></h1>
+  
+    <h2>A place where java tips and tricks are shared</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:squallssck.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">About How to Embed Image Into One Single Html</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-27T13:48:00-05:00" pubdate data-updated="true">Feb 27<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">embed</span><span class="o">(</span><span class="n">File</span> <span class="n">htmlFile</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">String</span> <span class="n">final_return</span> <span class="o">=</span> <span class="s">&quot;error&quot;</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>          
+</span><span class='line'>          <span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="n">htmlFile</span><span class="o">));</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">String</span> <span class="n">line</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="k">while</span> <span class="o">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>              <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">line</span><span class="o">);</span>
+</span><span class='line'>          <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="c1">// System.out.println(sb.toString());</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">br</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">String</span> <span class="n">htmlContent</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">org</span><span class="o">.</span><span class="na">jsoup</span><span class="o">.</span><span class="na">nodes</span><span class="o">.</span><span class="na">Document</span> <span class="n">doc</span> <span class="o">=</span> <span class="n">Jsoup</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">htmlContent</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">Elements</span> <span class="n">images</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="na">getElementsByTag</span><span class="o">(</span><span class="s">&quot;img&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="k">for</span> <span class="o">(</span><span class="n">Element</span> <span class="n">image</span> <span class="o">:</span> <span class="n">images</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="n">String</span> <span class="n">imgName</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="na">attr</span><span class="o">(</span><span class="s">&quot;src&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="c1">// System.out.println(imgName);</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="c1">// we surppose image files are in the same folder with the html file.</span>
+</span><span class='line'>              <span class="n">File</span> <span class="n">tempImageFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">file</span><span class="o">.</span><span class="na">getParentFile</span><span class="o">().</span><span class="na">getAbsoluteFile</span><span class="o">()+</span><span class="s">&quot;/&quot;</span><span class="o">+</span> <span class="n">imgName</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="k">if</span> <span class="o">(</span><span class="n">tempImageFile</span><span class="o">.</span><span class="na">exists</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">imgName</span><span class="o">.</span><span class="na">trim</span><span class="o">()</span> <span class="o">!=</span> <span class="s">&quot;&quot;</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="c1">// System.out.println(tempImageFile);</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="n">String</span> <span class="n">imageString</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="n">Base64</span><span class="o">.</span><span class="na">encodeBase64</span><span class="o">(</span><span class="n">FileUtils</span><span class="o">.</span><span class="na">readFileToByteArray</span><span class="o">(</span><span class="n">tempImageFile</span><span class="o">))</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="c1">// System.out.println(imageString);</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="n">image</span><span class="o">.</span><span class="na">attr</span><span class="o">(</span><span class="s">&quot;src&quot;</span><span class="o">,</span> <span class="s">&quot;data:image;base64,&quot;</span> <span class="o">+</span> <span class="n">imageString</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="c1">// tempImageFile.deleteOnExit();</span>
+</span><span class='line'>              <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="k">else</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="c1">// System.out.println(&quot;in else;;;&quot;);</span>
+</span><span class='line'>                  <span class="n">image</span><span class="o">.</span><span class="na">attr</span><span class="o">(</span><span class="s">&quot;src&quot;</span><span class="o">,</span> <span class="s">&quot;data:image;base64,&quot;</span> <span class="o">+</span> <span class="s">&quot;&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">final_return</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="c1">//do stuff...</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">return</span> <span class="n">final_return</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">squallssck</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-27T13:48:00-05:00" pubdate data-updated="true">Feb 27<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/html/'>HTML</a>, <a class='category' href='/blog/categories/image/'>IMAGE</a>, <a class='category' href='/blog/categories/java/'>JAVA</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://squallssck.github.com/blog/2013/02/27/about-how-to-embed-image-into-one-single-html/" data-via="" data-counturl="http://squallssck.github.com/blog/2013/02/27/about-how-to-embed-image-into-one-single-html/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/02/27/about-java-socket/" title="Previous Post: Java Core Series 2: About Java Socket">&laquo; Java Core Series 2: About Java Socket</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/03/07/about-how-to-make-phantomjs-support-google-web-fonts/" title="Next Post: About how to make phantomjs support google web fonts">About how to make phantomjs support google web fonts &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  
+  <br/>
+
+  <img class="center" src="/images/icon1.jpg" width="150" height="150" title="‘image’ ‘images’" > 
+  
+  <p>Technology, Music, Life and more ...</p>
+
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/core/'>CORE (2)</a></li>
+<li class='category'><a href='/blog/categories/doc/'>DOC (1)</a></li>
+<li class='category'><a href='/blog/categories/docx/'>DOCX (1)</a></li>
+<li class='category'><a href='/blog/categories/font/'>FONT (1)</a></li>
+<li class='category'><a href='/blog/categories/html/'>HTML (1)</a></li>
+<li class='category'><a href='/blog/categories/image/'>IMAGE (1)</a></li>
+<li class='category'><a href='/blog/categories/io/'>IO (1)</a></li>
+<li class='category'><a href='/blog/categories/java/'>JAVA (7)</a></li>
+<li class='category'><a href='/blog/categories/journal/'>JOURNAL (1)</a></li>
+<li class='category'><a href='/blog/categories/machine-learning/'>MACHINE_LEARNING (1)</a></li>
+<li class='category'><a href='/blog/categories/nodejs/'>NODEJS (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>OCTOPRESS (2)</a></li>
+<li class='category'><a href='/blog/categories/pdf/'>PDF (1)</a></li>
+<li class='category'><a href='/blog/categories/phantomjs/'>PHANTOMJS (1)</a></li>
+<li class='category'><a href='/blog/categories/rtf/'>RTF (1)</a></li>
+<li class='category'><a href='/blog/categories/socket/'>SOCKET (1)</a></li>
+<li class='category'><a href='/blog/categories/svm/'>SVM (1)</a></li>
+<li class='category'><a href='/blog/categories/test/'>TEST (1)</a></li>
+<li class='category'><a href='/blog/categories/utility/'>UTILITY (1)</a></li>
+
+  </ul>
+</section><section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/07/about-how-to-make-phantomjs-support-google-web-fonts/">About how to make phantomjs support google web fonts</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/27/about-how-to-embed-image-into-one-single-html/">About how to embed image into one single html</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/27/about-java-socket/">Java Core Series 2: About Java Socket</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/27/about-java-io/">Java Core Series 1: About Java IO</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/26/about-how-to-get-mime-types-using-java/">About how to get mime types using Java</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - squallssck -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'kcsjavaworld';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://squallssck.github.com/blog/2013/02/27/about-how-to-embed-image-into-one-single-html/';
+        var disqus_url = 'http://squallssck.github.com/blog/2013/02/27/about-how-to-embed-image-into-one-single-html/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

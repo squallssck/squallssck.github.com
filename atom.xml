@@ -4,7 +4,7 @@
   <title><![CDATA[KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-27T00:52:03-05:00</updated>
+  <updated>2013-03-07T15:02:31-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -12,6 +12,232 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[About how to make phantomjs support google web fonts]]></title>
+    <link href="http://squallssck.github.com/blog/2013/03/07/about-how-to-make-phantomjs-support-google-web-fonts/"/>
+    <updated>2013-03-07T14:57:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/03/07/about-how-to-make-phantomjs-support-google-web-fonts</id>
+    <content type="html"><![CDATA[<blockquote><p>1) Checkout PhantomJS 1.X version as described in the official instruction: http://phantomjs.org/build.html</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// For Ubuntu Linux (tested on a barebone install of Ubuntu 10.04 Lucid Lynx and Ubuntu 11.04 Natty Narwhal):
+</span><span class='line'>
+</span><span class='line'>sudo apt-get install build-essential chrpath git-core libssl-dev libfontconfig1-dev
+</span><span class='line'>git clone git://github.com/ariya/phantomjs.git
+</span><span class='line'>cd phantomjs
+</span><span class='line'>git checkout 1.8
+</span><span class='line'>//./build.sh
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>// On Mac OS, Install Xcode and the necessary SDK for development (gcc, various tools, libraries, etc).
+</span><span class='line'>
+</span><span class='line'>git clone git://github.com/ariya/phantomjs.git
+</span><span class='line'>cd phantomjs
+</span><span class='line'>git checkout 1.8
+</span><span class='line'>//./build.sh
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong> Note that by don&#8217;t ./build.sh now, cause it&#8217;s the master branch of the phantomjs, so, after checkout, don&#8217;t build. </strong></p>
+
+<blockquote><p>2) Add the remote repo which contains the needed branch:</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote add vital https://github.com/Vitallium/phantomjs.git
+</span><span class='line'>git fetch vital</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>3) Switch to the branch with WOFF file support:</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout -b fix-WOFF-file-support vital/fix-WOFF-file-support</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>before checkout, you should know what branch to checkout, sometimes the branch name may change. use <em>git checkout -a</em> to list all the branches.</strong></p>
+
+<blockquote><p>4) Compile PhantomJS as usual</p></blockquote>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>./build.sh</span></code></pre></td></tr></table></div></figure>
+
+
+<p>before tweeking:</p>
+
+<p><img src="http://squallssck.github.com/images/post_images/20130307/About_how_to_make_phantomjs_support_google_webfonts_1_before.png" width="350" height="350" title="image" alt="images"></p>
+
+<p>after:</p>
+
+<p><img src="http://squallssck.github.com/images/post_images/20130307/About_how_to_make_phantomjs_support_google_webfonts_2_after.png" width="350" height="350" title="image" alt="images"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[About how to embed image into one single html]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/27/about-how-to-embed-image-into-one-single-html/"/>
+    <updated>2013-02-27T13:48:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/27/about-how-to-embed-image-into-one-single-html</id>
+    <content type="html"><![CDATA[<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">embed</span><span class="o">(</span><span class="n">File</span> <span class="n">htmlFile</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">String</span> <span class="n">final_return</span> <span class="o">=</span> <span class="s">&quot;error&quot;</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">try</span> <span class="o">{</span>
+</span><span class='line'>          
+</span><span class='line'>          <span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">FileReader</span><span class="o">(</span><span class="n">htmlFile</span><span class="o">));</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">String</span> <span class="n">line</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="k">while</span> <span class="o">((</span><span class="n">line</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>              <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">line</span><span class="o">);</span>
+</span><span class='line'>          <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="c1">// System.out.println(sb.toString());</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">br</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">String</span> <span class="n">htmlContent</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">org</span><span class="o">.</span><span class="na">jsoup</span><span class="o">.</span><span class="na">nodes</span><span class="o">.</span><span class="na">Document</span> <span class="n">doc</span> <span class="o">=</span> <span class="n">Jsoup</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">htmlContent</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">Elements</span> <span class="n">images</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="na">getElementsByTag</span><span class="o">(</span><span class="s">&quot;img&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="k">for</span> <span class="o">(</span><span class="n">Element</span> <span class="n">image</span> <span class="o">:</span> <span class="n">images</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="n">String</span> <span class="n">imgName</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="na">attr</span><span class="o">(</span><span class="s">&quot;src&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="c1">// System.out.println(imgName);</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="c1">// we surppose image files are in the same folder with the html file.</span>
+</span><span class='line'>              <span class="n">File</span> <span class="n">tempImageFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">file</span><span class="o">.</span><span class="na">getParentFile</span><span class="o">().</span><span class="na">getAbsoluteFile</span><span class="o">()+</span><span class="s">&quot;/&quot;</span><span class="o">+</span> <span class="n">imgName</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="k">if</span> <span class="o">(</span><span class="n">tempImageFile</span><span class="o">.</span><span class="na">exists</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">imgName</span><span class="o">.</span><span class="na">trim</span><span class="o">()</span> <span class="o">!=</span> <span class="s">&quot;&quot;</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="c1">// System.out.println(tempImageFile);</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="n">String</span> <span class="n">imageString</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="n">Base64</span><span class="o">.</span><span class="na">encodeBase64</span><span class="o">(</span><span class="n">FileUtils</span><span class="o">.</span><span class="na">readFileToByteArray</span><span class="o">(</span><span class="n">tempImageFile</span><span class="o">))</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="c1">// System.out.println(imageString);</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="n">image</span><span class="o">.</span><span class="na">attr</span><span class="o">(</span><span class="s">&quot;src&quot;</span><span class="o">,</span> <span class="s">&quot;data:image;base64,&quot;</span> <span class="o">+</span> <span class="n">imageString</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="c1">// tempImageFile.deleteOnExit();</span>
+</span><span class='line'>              <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="k">else</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>                  <span class="c1">// System.out.println(&quot;in else;;;&quot;);</span>
+</span><span class='line'>                  <span class="n">image</span><span class="o">.</span><span class="na">attr</span><span class="o">(</span><span class="s">&quot;src&quot;</span><span class="o">,</span> <span class="s">&quot;data:image;base64,&quot;</span> <span class="o">+</span> <span class="s">&quot;&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>              <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">final_return</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="c1">//do stuff...</span>
+</span><span class='line'>      <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">return</span> <span class="n">final_return</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Java Core Series 2: About Java Socket]]></title>

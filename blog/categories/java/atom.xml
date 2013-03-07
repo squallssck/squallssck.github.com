@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JAVA | KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/blog/categories/java/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-02-27T00:52:03-05:00</updated>
+  <updated>2013-03-07T15:02:31-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -12,6 +12,90 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[About how to embed image into one single html]]></title>
+    <link href="http://squallssck.github.com/blog/2013/02/27/about-how-to-embed-image-into-one-single-html/"/>
+    <updated>2013-02-27T13:48:00-05:00</updated>
+    <id>http://squallssck.github.com/blog/2013/02/27/about-how-to-embed-image-into-one-single-html</id>
+    <content type="html"><![CDATA[<p>```java</p>
+
+<p>private static String embed(File htmlFile) {</p>
+
+<pre><code>    String final_return = "error";
+
+    try {
+
+        BufferedReader br = new BufferedReader(new FileReader(htmlFile));
+
+        StringBuilder sb = new StringBuilder();
+
+        String line = "";
+
+        while ((line = br.readLine()) != null) {
+            sb.append(line);
+        }
+
+        // System.out.println(sb.toString());
+
+        br.close();
+
+        String htmlContent = sb.toString();
+
+        org.jsoup.nodes.Document doc = Jsoup.parse(htmlContent);
+
+        Elements images = doc.getElementsByTag("img");
+
+        for (Element image : images) {
+
+            String imgName = image.attr("src");
+
+            // System.out.println(imgName);
+
+            // we surppose image files are in the same folder with the html file.
+            File tempImageFile = new File(file.getParentFile().getAbsoluteFile()+"/"+ imgName);
+
+            if (tempImageFile.exists() &amp;&amp; imgName.trim() != "") {
+
+                // System.out.println(tempImageFile);
+
+                String imageString = new String(
+
+                Base64.encodeBase64(FileUtils.readFileToByteArray(tempImageFile))
+
+                );
+
+                // System.out.println(imageString);
+
+                image.attr("src", "data:image;base64," + imageString);
+
+                // tempImageFile.deleteOnExit();
+            }
+
+            else {
+
+                // System.out.println("in else;;;");
+                image.attr("src", "data:image;base64," + "");
+
+            }
+
+        }
+
+        final_return = doc.toString();
+
+    } catch (Exception e) {
+
+        //do stuff...
+    }
+
+    return final_return;
+
+}
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Java Core Series 2: About Java Socket]]></title>
@@ -212,17 +296,6 @@ sudo apt-get install libreoffice
 ```</p>
 
 <blockquote><p>And it's better to use singleton mode to use the officeManager.</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How to use libsvm to do classification with java]]></title>
-    <link href="http://squallssck.github.com/blog/2013/02/25/about-using-java-version-libsvm-do-classcification/"/>
-    <updated>2013-02-25T00:19:00-05:00</updated>
-    <id>http://squallssck.github.com/blog/2013/02/25/about-using-java-version-libsvm-do-classcification</id>
-    <content type="html"><![CDATA[<p><strong>A real example from data preparing to train the model to finally do the classification included</strong></p>
-
-<p>Comming soon...</p>
 ]]></content>
   </entry>
   
