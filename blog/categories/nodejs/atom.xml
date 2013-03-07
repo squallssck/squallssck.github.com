@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NODEJS | KC's Core Java World]]></title>
   <link href="http://squallssck.github.com/blog/categories/nodejs/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-03-07T15:02:31-05:00</updated>
+  <updated>2013-03-07T15:04:55-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -54,6 +54,9 @@ git checkout -b fix-WOFF-file-support vital/fix-WOFF-file-support
 </code></p>
 
 <p><strong>before checkout, you should know what branch to checkout, sometimes the branch name may change. use <em>git checkout -a</em> to list all the branches.</strong></p>
+
+<!--more-->
+
 
 <blockquote><p>4) Compile PhantomJS as usual</p></blockquote>
 
