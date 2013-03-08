@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NODEJS | Techfee]]></title>
   <link href="http://squallssck.github.com/blog/categories/nodejs/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-03-08T00:12:50-05:00</updated>
+  <updated>2013-03-08T00:14:23-05:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -45,6 +45,9 @@ git checkout 1.8
 
 <blockquote><p>2) Add the remote repo which contains the needed branch:</p></blockquote>
 
+<!--more-->
+
+
 <p><code>
 git remote add vital https://github.com/Vitallium/phantomjs.git
 git fetch vital
@@ -57,9 +60,6 @@ git checkout -b fix-WOFF-file-support vital/fix-WOFF-file-support
 </code></p>
 
 <p><strong>before checkout, you should know what branch to checkout, sometimes the branch name may change. use <em>git checkout -a</em> to list all the branches.</strong></p>
-
-<!--more-->
-
 
 <blockquote><p>4) Compile PhantomJS as usual</p></blockquote>
 

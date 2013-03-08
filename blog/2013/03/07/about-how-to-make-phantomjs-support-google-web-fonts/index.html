@@ -113,7 +113,6 @@ https://github.com/Vitallium &#8216;s commit which has fixed WOFF file support i
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
-<span class='line-number'>15</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>// For Ubuntu Linux (tested on a barebone install of Ubuntu 10.04 Lucid Lynx and Ubuntu 11.04 Natty Narwhal):
 </span><span class='line'>
 </span><span class='line'>sudo apt-get install build-essential chrpath git-core libssl-dev libfontconfig1-dev
@@ -121,7 +120,6 @@ https://github.com/Vitallium &#8216;s commit which has fixed WOFF file support i
 </span><span class='line'>cd phantomjs
 </span><span class='line'>git checkout 1.8
 </span><span class='line'>//./build.sh
-</span><span class='line'>
 </span><span class='line'>
 </span><span class='line'>// On Mac OS, Install Xcode and the necessary SDK for development (gcc, various tools, libraries, etc).
 </span><span class='line'>
@@ -136,6 +134,9 @@ https://github.com/Vitallium &#8216;s commit which has fixed WOFF file support i
 
 <blockquote><p>2) Add the remote repo which contains the needed branch:</p></blockquote>
 
+<!--more-->
+
+
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>git remote add vital https://github.com/Vitallium/phantomjs.git
@@ -149,9 +150,6 @@ https://github.com/Vitallium &#8216;s commit which has fixed WOFF file support i
 
 
 <p><strong>before checkout, you should know what branch to checkout, sometimes the branch name may change. use <em>git checkout -a</em> to list all the branches.</strong></p>
-
-<!--more-->
-
 
 <blockquote><p>4) Compile PhantomJS as usual</p></blockquote>
 
