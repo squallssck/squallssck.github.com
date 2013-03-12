@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NODEJS | Techfee]]></title>
   <link href="http://squallssck.github.com/blog/categories/nodejs/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-03-08T00:47:29-05:00</updated>
+  <updated>2013-03-12T10:56:51-04:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[About how to make phantomjs support google web fonts]]></title>
+    <title type="html"><![CDATA[About how to make phantomjs render google embeded web fonts correctly]]></title>
     <link href="http://squallssck.github.com/blog/2013/03/07/about-how-to-make-phantomjs-support-google-web-fonts/"/>
     <updated>2013-03-07T14:57:00-05:00</updated>
     <id>http://squallssck.github.com/blog/2013/03/07/about-how-to-make-phantomjs-support-google-web-fonts</id>
