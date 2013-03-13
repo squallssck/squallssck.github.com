@@ -4,7 +4,7 @@
   <title><![CDATA[Techfee]]></title>
   <link href="http://squallssck.github.com/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-03-13T01:56:08-04:00</updated>
+  <updated>2013-03-13T01:58:33-04:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[About how to design a worker queue style node js application server]]></title>
+    <link href="http://squallssck.github.com/blog/2013/03/13/about-how-to-design-a-worker-queue-style-node-js-application-server/"/>
+    <updated>2013-03-13T01:58:00-04:00</updated>
+    <id>http://squallssck.github.com/blog/2013/03/13/about-how-to-design-a-worker-queue-style-node-js-application-server</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[About how to make phantomjs render google embeded web fonts correctly]]></title>
