@@ -4,7 +4,7 @@
   <title><![CDATA[Category: IMAGE | Techfee]]></title>
   <link href="http://squallssck.github.com/blog/categories/image/atom.xml" rel="self"/>
   <link href="http://squallssck.github.com/"/>
-  <updated>2013-03-13T01:58:33-04:00</updated>
+  <updated>2013-04-27T12:48:16-04:00</updated>
   <id>http://squallssck.github.com/</id>
   <author>
     <name><![CDATA[squallssck]]></name>
@@ -36,8 +36,6 @@
             sb.append(line);
         }
 
-        // System.out.println(sb.toString());
-
         br.close();
 
         String htmlContent = sb.toString();
@@ -50,31 +48,22 @@
 
             String imgName = image.attr("src");
 
-            // System.out.println(imgName);
-
             // we surppose image files are in the same folder with the html file.
             File tempImageFile = new File(file.getParentFile().getAbsoluteFile()+"/"+ imgName);
 
             if (tempImageFile.exists() &amp;&amp; imgName.trim() != "") {
 
-                // System.out.println(tempImageFile);
-
                 String imageString = new String(
 
-                Base64.encodeBase64(FileUtils.readFileToByteArray(tempImageFile))
-
-                );
-
-                // System.out.println(imageString);
+                Base64.encodeBase64(FileUtils.readFileToByteArray(tempImageFile)));
 
                 image.attr("src", "data:image;base64," + imageString);
 
-                // tempImageFile.deleteOnExit();
             }
 
             else {
 
-                // System.out.println("in else;;;");
+                // if the image file not exist, just put a empty string in it or leave it as it was
                 image.attr("src", "data:image;base64," + "");
 
             }

@@ -203,17 +203,6 @@
 <span class='line-number'>58</span>
 <span class='line-number'>59</span>
 <span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
 </pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">embed</span><span class="o">(</span><span class="n">File</span> <span class="n">htmlFile</span><span class="o">)</span> <span class="o">{</span>
 </span><span class='line'>
 </span><span class='line'>      <span class="n">String</span> <span class="n">final_return</span> <span class="o">=</span> <span class="s">&quot;error&quot;</span><span class="o">;</span>
@@ -230,8 +219,6 @@
 </span><span class='line'>              <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">line</span><span class="o">);</span>
 </span><span class='line'>          <span class="o">}</span>
 </span><span class='line'>
-</span><span class='line'>          <span class="c1">// System.out.println(sb.toString());</span>
-</span><span class='line'>
 </span><span class='line'>          <span class="n">br</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
 </span><span class='line'>
 </span><span class='line'>          <span class="n">String</span> <span class="n">htmlContent</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
@@ -244,31 +231,22 @@
 </span><span class='line'>
 </span><span class='line'>              <span class="n">String</span> <span class="n">imgName</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="na">attr</span><span class="o">(</span><span class="s">&quot;src&quot;</span><span class="o">);</span>
 </span><span class='line'>
-</span><span class='line'>              <span class="c1">// System.out.println(imgName);</span>
-</span><span class='line'>
 </span><span class='line'>              <span class="c1">// we surppose image files are in the same folder with the html file.</span>
 </span><span class='line'>              <span class="n">File</span> <span class="n">tempImageFile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">file</span><span class="o">.</span><span class="na">getParentFile</span><span class="o">().</span><span class="na">getAbsoluteFile</span><span class="o">()+</span><span class="s">&quot;/&quot;</span><span class="o">+</span> <span class="n">imgName</span><span class="o">);</span>
 </span><span class='line'>
 </span><span class='line'>              <span class="k">if</span> <span class="o">(</span><span class="n">tempImageFile</span><span class="o">.</span><span class="na">exists</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="n">imgName</span><span class="o">.</span><span class="na">trim</span><span class="o">()</span> <span class="o">!=</span> <span class="s">&quot;&quot;</span><span class="o">)</span> <span class="o">{</span>
 </span><span class='line'>
-</span><span class='line'>                  <span class="c1">// System.out.println(tempImageFile);</span>
-</span><span class='line'>
 </span><span class='line'>                  <span class="n">String</span> <span class="n">imageString</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span>
 </span><span class='line'>
-</span><span class='line'>                  <span class="n">Base64</span><span class="o">.</span><span class="na">encodeBase64</span><span class="o">(</span><span class="n">FileUtils</span><span class="o">.</span><span class="na">readFileToByteArray</span><span class="o">(</span><span class="n">tempImageFile</span><span class="o">))</span>
-</span><span class='line'>
-</span><span class='line'>                  <span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'>                  <span class="c1">// System.out.println(imageString);</span>
+</span><span class='line'>                  <span class="n">Base64</span><span class="o">.</span><span class="na">encodeBase64</span><span class="o">(</span><span class="n">FileUtils</span><span class="o">.</span><span class="na">readFileToByteArray</span><span class="o">(</span><span class="n">tempImageFile</span><span class="o">)));</span>
 </span><span class='line'>
 </span><span class='line'>                  <span class="n">image</span><span class="o">.</span><span class="na">attr</span><span class="o">(</span><span class="s">&quot;src&quot;</span><span class="o">,</span> <span class="s">&quot;data:image;base64,&quot;</span> <span class="o">+</span> <span class="n">imageString</span><span class="o">);</span>
 </span><span class='line'>
-</span><span class='line'>                  <span class="c1">// tempImageFile.deleteOnExit();</span>
 </span><span class='line'>              <span class="o">}</span>
 </span><span class='line'>
 </span><span class='line'>              <span class="k">else</span> <span class="o">{</span>
 </span><span class='line'>
-</span><span class='line'>                  <span class="c1">// System.out.println(&quot;in else;;;&quot;);</span>
+</span><span class='line'>                  <span class="c1">// if the image file not exist, just put a empty string in it or leave it as it was</span>
 </span><span class='line'>                  <span class="n">image</span><span class="o">.</span><span class="na">attr</span><span class="o">(</span><span class="s">&quot;src&quot;</span><span class="o">,</span> <span class="s">&quot;data:image;base64,&quot;</span> <span class="o">+</span> <span class="s">&quot;&quot;</span><span class="o">);</span>
 </span><span class='line'>
 </span><span class='line'>              <span class="o">}</span>
